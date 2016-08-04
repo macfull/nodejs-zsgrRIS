@@ -1,0 +1,108 @@
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-content">
+						<span class="bigger-120">
+							<span class="blue bolder">中实国润</span>
+							 影像工作站 &copy; 2016
+						</span>
+
+            &nbsp; &nbsp;
+        </div>
+    </div>
+</div>
+
+
+
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+</a>
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="assets/js/jquery.2.1.1.min.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/laydate.js"></script>
+<script src="assets/js/script.js"></script>
+<script type="text/javascript">
+    function appoint() {
+        $("#TB_overlayBG").css({
+            display: "block",
+            height: $(document).height()
+        });
+        $("#appointment").center();
+        $("#appointment").fadeIn();
+        $('body').css('overflow', 'hidden');
+
+    }
+    $(function($) {
+        $("#TB_overlayBG,#appointment dt a").on("click", function () {
+            $("#appointment").fadeOut();
+            $("#TB_overlayBG").fadeOut();
+            $('body').css('overflow', 'auto');
+        });
+        laydate.skin('danlan');
+        $('#apm_post').on('click', function(e) {
+            var patient_info_id = $("#patient_info_id").val();
+            var patient_id = $("#patient_id").val();
+            var patient_name = $("#patient_name").val();
+            var data = {"patient_info_id":patient_info_id,"patient_id":patient_id,"patient_name":patient_name};
+            $.ajax({
+                url:'/appointment',
+                type:'post',
+                data: data,
+                success: function(data,status){
+                    if(status == 'success'){
+                        //location.href = '/appointment';
+                    }
+                },
+                error: function(data,status){
+                    if(status == 'error'){
+                        //location.href = '/appointment';
+                    }
+                }
+            });
+
+            e.preventDefault();
+        });
+        $('.btn-success').on('click', function(e) {
+            location.href = '/stats';
+            e.preventDefault();
+        });
+        $('.btn-info').on('click', function(e) {
+            location.href = '/appointment';
+            e.preventDefault();
+        });
+        $('.btn-warning').on('click', function(e) {
+            location.href = '/patientlist';
+            e.preventDefault();
+        });
+        $('.btn-danger').on('click', function(e) {
+            location.href = '/settings';
+            e.preventDefault();
+        });
+
+    });
+
+</script>

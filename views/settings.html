@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>中实国润 | 影像工作站</title>
+
+    <meta name="description" content="Static &amp; Dynamic Tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+<%- include header.html %>
+
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <%- include sidebar.html %>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                </script>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">管理</a>
+                    </li>
+
+                    <li class="active">系统维护</li>
+                </ul><!-- /.breadcrumb -->
+
+
+            </div>
+
+            <div class="page-content">
+
+
+                <div class="page-header">
+                    <div class="" id="nav-search">
+
+                    </div>
+                </div><!-- /.page-header -->
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="box">
+                                    <div class="box_border">
+                                        <div class="box_top"><b class="pl15">系统维护</b></div>
+                                        <dl class="mtc">
+                                            <dt>
+                                            <ul class="clearfix">
+                                                <li class="cur">科室员工</li>
+                                                <li>系统用户</li>
+                                                <li>检查类别</li>
+                                                <li>检查项目</li>
+                                                <li>检查设备</li>
+                                                <li class="last">检查机房</li>
+                                            </ul>
+                                            </dt>
+                                            <dd>
+                                                <div class="show1">
+                                                    <form class="apm">
+                                                        <div class="ck1">科室员工维护</div>
+                                                        <div class="box_center pt10 pb10 pl10 pr10">
+                                                            <table class="form_table">
+                                                                <tr>
+                                                                    <td>工号：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                    <td>姓名：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>工号</th>
+                                                                    <th>姓名</th>
+                                                                    <th>出生日期</th>
+                                                                    <th>籍贯</th>
+                                                                    <th>职位</th>
+                                                                    <th>工作年限</th>
+                                                                    <th>职称</th>
+                                                                    <th>家庭住址</th>
+                                                                    <th>家庭电话</th>
+                                                                    <th>移动电话</th>
+                                                                    <th>邮箱地址</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="hide1">
+                                                    <form class="apm">
+                                                        <div class="ck1">系统用户维护</div>
+                                                        <div class="box_center pt10 pb10 pl10 pr10">
+                                                            <table class="form_table">
+                                                                <tr>
+                                                                    <td>登录ID：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                    <td>姓名：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="解锁">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="工作组管理">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改签名图片">
+                                                                <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>登录ID</th>
+                                                                    <th>姓名</th>
+                                                                    <th>员工编号</th>
+                                                                    <th>状态</th>
+                                                                    <th>有效起始日</th>
+                                                                    <th>有效截止日</th>
+                                                                    <th>用户组</th>
+                                                                    <th>锁定状态</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="hide1">
+                                                    <form class="apm">
+                                                        <div class="ck1">检查类别维护</div>
+
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="分类管理">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="部位管理">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>检查类别</th>
+                                                                    <th>图像下载</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="hide1">
+                                                    <form class="apm">
+                                                        <div class="ck1">检查项目维护</div>
+                                                        <div class="box_center pt10 pb10 pl10 pr10">
+                                                            <table class="form_table">
+                                                                <tr>
+                                                                    <td>检查类别：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+                                                                    <td>检查子类：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+                                                                    <td>检查部位：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>项目代码：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                    <td>项目名称：</td>
+                                                                    <td><input type="text" name="name" class="input-text lh25" size="10"></td>
+                                                                    <td>DICOM设备：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>检查类别</th>
+                                                                    <th>检查子类</th>
+                                                                    <th>检查部位</th>
+                                                                    <th>项目代码</th>
+                                                                    <th>项目名称</th>
+                                                                    <th>项目收费</th>
+                                                                    <th>DICOM设备</th>
+                                                                    <th>项目权重</th>
+                                                                    <th>拼音代码</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="hide1">
+                                                    <form class="apm">
+                                                        <div class="ck1">检查设备维护</div>
+                                                        <div class="box_center pt10 pb10 pl10 pr10">
+                                                            <table class="form_table">
+                                                                <tr>
+                                                                    <td>DICOM类型：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>设备名称</th>
+                                                                    <th>DICOM类型</th>
+                                                                    <th>设备型号</th>
+                                                                    <th>设备厂商</th>
+                                                                    <th>厂商电话</th>
+                                                                    <th>可用</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="hide1">
+                                                    <form class="apm">
+                                                        <div class="ck1">检查机房维护</div>
+                                                        <div class="box_center pt10 pb10 pl10 pr10">
+                                                            <table class="form_table">
+                                                                <tr>
+                                                                    <td>检查类别：</td>
+                                                                    <td>
+                                            	<span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                        </select>
+                        </div>
+                      </div>
+                    </span>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="box_bottom pb5 pr10 pl20" style="border-bottom:1px solid #dadada;">
+                                                            <div class="search_bar_btn" style="text-align:left;">
+                                                                <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="新增">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="修改">
+                                                                <input type="button" class="ext_btn ext_btn_success" value="删除">
+                                                                <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <dl class="qlist mt15">
+                                                        <dd>
+                                                            <table>
+                                                                <tbody><tr>
+                                                                    <th>机房名称</th>
+                                                                    <th>检查类别</th>
+                                                                    <th>检查设备</th>
+                                                                    <th>IP地址</th>
+                                                                    <th>每天限额</th>
+                                                                    <th>可用</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>CT</td>
+                                                                    <td>35</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                </tr>
+                                                                </tbody></table>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modal-table" class="modal fade" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header no-padding">
+                                        <div class="table-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <span class="white">&times;</span>
+                                            </button>
+                                            Results for "Latest Registered Domains
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-body no-padding">
+                                        <table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+                                            <thead>
+                                            <tr>
+                                                <th>Domain</th>
+                                                <th>Price</th>
+                                                <th>Clicks</th>
+
+                                                <th>
+                                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                                    Update
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">ace.com</a>
+                                                </td>
+                                                <td>$45</td>
+                                                <td>3,330</td>
+                                                <td>Feb 12</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">base.com</a>
+                                                </td>
+                                                <td>$35</td>
+                                                <td>2,595</td>
+                                                <td>Feb 18</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">max.com</a>
+                                                </td>
+                                                <td>$60</td>
+                                                <td>4,400</td>
+                                                <td>Mar 11</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">best.com</a>
+                                                </td>
+                                                <td>$75</td>
+                                                <td>6,500</td>
+                                                <td>Apr 03</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">pro.com</a>
+                                                </td>
+                                                <td>$55</td>
+                                                <td>4,250</td>
+                                                <td>Jan 21</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="modal-footer no-margin-top">
+                                        <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                                            <i class="ace-icon fa fa-times"></i>
+                                            Close
+                                        </button>
+
+                                        <ul class="pagination pull-right no-margin">
+                                            <li class="prev disabled">
+                                                <a href="#">
+                                                    <i class="ace-icon fa fa-angle-double-left"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="active">
+                                                <a href="#">1</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">3</a>
+                                            </li>
+
+                                            <li class="next">
+                                                <a href="#">
+                                                    <i class="ace-icon fa fa-angle-double-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <%- include footer.html %>
+</div><!-- /.main-container -->
+
+
+
+<!-- page specific plugin scripts -->
+<!--
+<script src="assets/js/jquery.dataTables.min.js"></script>
+
+<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="assets/js/dataTables.tableTools.min.js"></script>
+<script src="assets/js/dataTables.colVis.min.js"></script>-->
+
+<!-- ace scripts -->
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function($) {
+
+        //table checkboxes
+        $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+        //select/deselect all rows according to table header checkbox
+        $('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $(this).closest('table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) tableTools_obj.fnSelect(row);
+                else tableTools_obj.fnDeselect(row);
+            });
+        });
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+            var row = $(this).closest('tr').get(0);
+            if(!this.checked) tableTools_obj.fnSelect(row);
+            else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+        });
+
+
+
+
+        $(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+
+
+        //And for the first simple table, which doesn't have TableTools or dataTables
+        //select/deselect all rows according to table header checkbox
+        var active_class = 'active';
+        $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $(this).closest('table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+                else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
+            });
+        });
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+            var $row = $(this).closest('tr');
+            if(this.checked) $row.addClass(active_class);
+            else $row.removeClass(active_class);
+        });
+
+
+
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
+        }
+        //
+        $(".tr:odd").css("background", "#FFFCEA");
+        $(".tr:odd").each(function(){
+            $(this).hover(function(){
+                $(this).css("background-color", "#f9f9f9");
+            }, function(){
+                $(this).css("background-color", "#FFFCEA");
+            });
+        });
+        $(".tr:even").each(function(){
+            $(this).hover(function(){
+                $(this).css("background-color", "#f9f9f9");
+            }, function(){
+                $(this).css("background-color", "#fff");
+            });
+        });
+        //
+        $(".nav-list>li").eq(3).addClass("active open").children("ul").children("li").eq(2).addClass("active");
+
+        var $tabs_a =$(".mtc dt li");
+        $tabs_a.click(function(){
+            $(this).addClass("cur")
+                    .siblings().removeClass("cur");
+            var index =  $tabs_a.index(this);
+            $(".mtc dd > div")
+                    .eq(index).show()
+                    .siblings().hide();
+        });
+
+    })
+</script>
+
+</body>
+</html>

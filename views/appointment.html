@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>中实国润 | 影像工作站</title>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+<%- include header.html %>
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <%- include sidebar.html %>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                </script>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">主页</a>
+                    </li>
+
+                    <li class="active">申请预约</li>
+                </ul><!-- /.breadcrumb -->
+
+                <div class="nav-search" id="nav-search">
+                    <form class="form-search">
+								<span class="input-icon">
+									<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+									<i class="ace-icon fa fa-search nav-search-icon"></i>
+								</span>
+                    </form>
+                </div><!-- /.nav-search -->
+            </div>
+
+            <div class="page-content">
+
+                <div class="row">
+                    <%- message %>
+                    <!--申请预约-->
+                    <dl id="appointment">
+                        <dt>申请预约</dt>
+                        <dd>
+                            <form id="apm" action="/appointment">
+                                <p class="ck1">患者信息</p>
+                                <table>
+                                    <tr>
+                                        <td align="right">申请单号：</td>
+                                        <td><input type="text" class="w60" id="patient_info_id" name="patient_info_id"></td>
+                                        <td align="right" class="pdl8">患者ID号：</td>
+                                        <td><input type="text" class="w60" id="patient_id" name="patient_id"></td>
+                                        <td align="right" class="pdl8">姓名：</td>
+                                        <td><input type="text" class="w60" id="patient_name" name="patient_name"></td>
+                                        <td align="right" class="pdl8">性别：</td>
+                                        <td>
+                                            <select name="sex_type">
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </td>
+                                        <td align="right" class="pdl8">年龄：</td>
+                                        <td>
+                                            <input type="text" class="w40" name="age">
+                                            <select>
+                                                <option>岁</option>
+                                                <option>月</option>
+                                                <option>天</option>
+                                            </select>
+                                        </td>
+                                        <td align="right" class="pdl8">生日：</td>
+                                        <td><input class="laydate-icon w100" id="pld_1" onclick="laydate({format: 'YYYY/MM/DD'})" name="birth_date"></td>
+
+
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">身高(CM)：</td>
+                                        <td><input type="text" class="w40" name="heigt"></td>
+                                        <td align="right" class="pdl8">体重(KG)：</td>
+                                        <td><input type="text" class="w40" name="weight"></td>
+                                        <td align="right" class="pdl8">国籍：</td>
+                                        <td><select name="country">
+                                            <option>中国</option>
+                                            <option>美国</option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">民族：</td>
+                                        <td><select name="ethnic">
+                                            <option>汉族</option>
+                                            <option>回族</option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">婚姻：</td>
+                                        <td><select name="mrriage">
+                                            <option>未婚</option>
+                                            <option>已婚</option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">身份证号：</td>
+                                        <td><input type="text" class="w140" name="id_number"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">社保号：</td>
+                                        <td><input type="text" class="w140" name="social_security_id"></td>
+                                        <td align="right" class="pdl8">固定电话：</td>
+                                        <td><input type="text" class="w140" name="telephone_num"></td>
+                                        <td align="right" class="pdl8">移动电话：</td>
+                                        <td><input type="text" class="w140" name="mobilephone_num"></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">邮箱地址：	</td>
+                                        <td><input type="text" class="w140" name="email_address"></td>
+                                        <td align="right" class="pdl8">联系地址：</td>
+                                        <td><input type="text" class="w200" name="contact_address"></td>
+                                        <td align="right" class="pdl8">邮政编码：</td>
+                                        <td><input type="text" class="w140" name="postal_code"></td>
+                                    </tr>
+                                </table>
+                                <p class="ck1">申请信息</p>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">患者来源：	</td>
+                                        <td><select name="hospital_name">
+                                            <option>门诊</option>
+                                            <option>住院</option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">门诊号：</td>
+                                        <td><input type="text" class="w80" name="out_patient_id"></td>
+                                        <td align="right" class="pdl8">住院号：</td>
+                                        <td><input type="text" class="w80" name="in_patient_id"></td>
+                                        <td align="right" class="pdl8">病房：</td>
+                                        <td><input type="text" class="w80" name="sick_room"></td>
+                                        <td align="right" class="pdl8">申请科室：	</td>
+                                        <td><select name="apply_dept_name">
+                                            <option>胸心外科</option>
+                                            <option>神经外科</option>
+                                            <option>中医骨伤科</option>
+                                        </select></td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">申请医生：	</td>
+                                        <td><select name="apply_doctor_name">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">床号：</td>
+                                        <td><input type="text" class="w80" name="bed_no"></td>
+                                        <td align="right" class="pdl8">临床诊断：</td>
+                                        <td><input type="text" class="w200" name="clinic_diag"></td>
+                                    </tr>
+                                </table>
+                                <p class="ck1">检查信息</p>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">检查号：</td>
+                                        <td><input type="text" class="w80" name="accession_num"></td>
+                                        <td align="right" class="pdl8">检查类别：	</td>
+                                        <td><select name="study_class">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">检查子类：	</td>
+                                        <td><select name="study_subclass">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select></td>
+                                        <td align="right" class="pdl8">检查诊室：	</td>
+                                        <td><select name="study_room_name">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select></td>
+
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td align="right" class="pdl8">预约日期：</td>
+                                        <td><input class="laydate-icon w100" id="pld_1" onclick="laydate({format: 'YYYY/MM/DD'})" name="scheduled_datetime"></td>
+                                        <td align="right" class="pdl8">预约时间：	</td>
+                                        <td><select name="reg_datetime">
+                                            <option></option>
+                                            <option></option>
+                                            <option></option>
+                                        </select></td>
+
+
+                                        <td align="right" class="pdl8">费用：</td>
+                                        <td><input type="text" class="w80" name="price_sum"></td>
+                                        <td align="right" class="pdl8">收费标识：</td>
+                                        <td><input type="checkbox" name="fee_status">未交费</td>
+                                    </tr>
+                                </table>
+
+                                <table>
+                                    <tr>
+                                        <td align="right" valign="top"  width="68">检查项目：</td>
+                                        <td>
+                                            <label><input type="checkbox"><span class="cl01">00001</span>X线计算机体层(CT)平扫 <span class="cl02">100元</span></label>
+                                            <label><input type="checkbox"><span class="cl01">00002</span>X线计算机体层(CT)平扫 <span class="cl02">200元</span></label>
+                                            <label><input type="checkbox"><span class="cl01">00003</span>X线计算机体层(CT)平扫 <span class="cl02">300元</span></label>
+                                            <label><input type="checkbox"><span class="cl01">00004</span>X线计算机体层(CT)平扫 <span class="cl02">400元</span></label>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="apm_btn">
+                                    <button id="apm_reset" class="btn" type="reset">
+                                        <i class="ace-icon fa fa-undo bigger-110"></i>
+                                        清空
+                                    </button>
+                                    &nbsp; &nbsp; &nbsp;
+                                    <button id="apm_post" class="btn btn-info" type="button">
+                                        <i class="ace-icon fa fa-check bigger-110"></i>
+                                        保存
+                                    </button>
+                                </div>
+                            </form>
+                        </dd>
+                    </dl>
+                    <!--申请预约end-->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <%- include footer.html %>
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+<!--[if !IE]> -->
+<script src="assets/js/jquery.2.1.1.min.js"></script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="assets/js/jquery.1.11.1.min.js"></script>
+<![endif]-->
+
+<!--[if !IE]> -->
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery.min.js'>"+"<"+"/script>");
+</script>
+
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+<script type="text/javascript">
+    if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- page specific plugin scripts -->
+
+<!-- ace scripts -->
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function($) {
+        $(".nav-list li").eq(0).addClass("active open");
+        $(".submenu li").eq(1).addClass("active");
+    })
+</script>
+</body>
+</html>

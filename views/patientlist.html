@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <title>中实国润 | 影像工作站</title>
+
+    <meta name="description" content="Static &amp; Dynamic Tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+    <!-- page specific plugin styles -->
+
+    <!-- text fonts -->
+    <link rel="stylesheet" href="assets/fonts/fonts.googleapis.com.css" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-part2.min.css" class="ace-main-stylesheet" />
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <![endif]-->
+
+    <!-- inline styles related to this page -->
+
+    <!-- ace settings handler -->
+    <script src="assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+    <!--[if lte IE 8]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="no-skin">
+<%- include header.html %>
+
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
+
+    <%- include sidebar.html %>
+
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                </script>
+
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        <a href="#">报告</a>
+                    </li>
+
+                    <li class="active">患者列表</li>
+                </ul><!-- /.breadcrumb -->
+
+
+            </div>
+
+            <div class="page-content">
+
+
+                <div class="page-header">
+                    <div class="" id="nav-search">
+
+                    </div>
+                </div><!-- /.page-header -->
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+
+
+
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="box">
+                                    <div class="box_border">
+                                        <div class="box_top"><b class="pl15">患者列表</b></div>
+                                        <form class="plist">
+                                            <table>
+                                                <tr>
+                                                    <td align="right">患者姓名：</td>
+                                                    <td><input type="text" class="input-text lh25"/></td>
+                                                    <td align="right">患者编号：</td>
+                                                    <td><input type="text" class="input-text lh25"/></td>
+                                                    <td align="right">检查号：</td>
+                                                    <td><input type="text" class="input-text lh25"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">检查类别：</td>
+                                                    <td><span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option>B超</option>
+                        <option>CT</option>
+                        <option>核磁</option>
+                        </select>
+                        </div>
+                      </div>
+                    </span></td>
+                                                    <td align="right">申请科室：</td>
+                                                    <td><span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option>胸心外科</option>
+                        <option>神经外科</option>
+                        <option>中医骨伤科</option>
+                        </select>
+                        </div>
+                      </div>
+                    </span></td>
+                                                    <td align="right">报告医生：</td>
+                                                    <td><span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option>陈永华</option>
+                        <option>CT管理员</option>
+                        <option>张三</option>
+                        </select>
+                        </div>
+                      </div>
+                    </span></td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td valign="top">检查描述：</td>
+                                                    <td><textarea></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="top">诊断意见：</td>
+                                                    <td><textarea></textarea></td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>开始日期：</td>
+                                                    <td><input class="laydate-icon" id="pld_1" onclick="laydate({format: 'YYYY/MM/DD'})"></td>
+                                                    <td>结束日期：</td>
+                                                    <td><input class="laydate-icon" id="pld_2" onclick="laydate({format: 'YYYY/MM/DD'})"></td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td width="65" align="right">阴阳性：</td>
+                                                    <td><span class="fl">
+                      <div class="select_border">
+                        <div class="select_containers ">
+                        <select name="" class="select">
+                        <option></option>
+                        <option>阴性</option>
+                        <option>阳性</option>
+                        </select>
+                        </div>
+                      </div>
+                    </span></td>
+                                                    <td>&nbsp;</td>
+                                                    <td><label><input type="checkbox" />审核</label></td>
+                                                </tr>
+                                            </table>
+                                            <div class="box_bottom pb5 pt5 pr10 pl10" style="border-top:1px solid #dadada;">
+                                                <div class="search_bar_btn" style="text-align:left;">
+                                                    <input type="button" name="button" class="btn btn82 btn_search" value="查询">
+                                                    <input type="reset" class="ext_btn ext_btn_error" value="清空">
+                                                    <input type="button" class="ext_btn ext_btn_success" value="当天">
+                                                    <input type="button" class="ext_btn ext_btn_success" value="我的患者">
+                                                    <input type="button" class="ext_btn ext_btn_success" value="我的收藏">
+                                                    <input type="button" class="ext_btn ext_btn_success" value="图像对比">
+
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="mt10">
+                                        <div class="">
+                                            <table border="0" cellpadding="0" cellspacing="0" class="table01">
+                                                <tr>
+                                                    <th>状态</th>
+                                                    <th>图像</th>
+                                                    <th>打印</th>
+                                                    <th>检查号</th>
+                                                    <th>类别</th>
+                                                    <th>患者编号</th>
+                                                    <th>姓名</th>
+                                                    <th>性别</th>
+                                                    <th>年龄</th>
+                                                    <th>图像评级</th>
+                                                    <th>来源</th>
+                                                    <th>检查部位</th>
+                                                    <th>临床诊断</th>
+                                                    <th>检查科室</th>
+                                                    <th>登记时间</th>
+                                                    <th>检查医生</th>
+                                                    <th>检查时间</th>
+                                                    <th>报告医生</th>
+                                                    <th>审核医生</th>
+                                                    <th>终审医生</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                                <tr class="tr">
+                                                    <td><span class="s_tu">图</span></td>
+                                                    <td><img src="assets/css/images/himg.png" width="24" /></td>
+                                                    <td><img src="assets/css/images/print.png" width="24" /></td>
+                                                    <td>RY309</td>
+                                                    <td>CT</td>
+                                                    <td>2763733</td>
+                                                    <td>张三</td>
+                                                    <td>男</td>
+                                                    <td>22岁</td>
+                                                    <td>甲级</td>
+                                                    <td>门诊</td>
+                                                    <td>腹部</td>
+                                                    <td></td>
+                                                    <td>CT室</td>
+                                                    <td>2016/3/25 15:25:17</td>
+                                                    <td>CT管理员</td>
+                                                    <td>2016/3/25 15:25:17</td>
+                                                    <td>CT管理员</td>
+                                                    <td>CT管理员</td>
+                                                    <td>CT管理员</td>
+                                                    <td><a href="">查看图像</a><a href="">收藏报告</a><a href="">回访</a><a  href="/reportdetail" target="right">报告单</a></td>
+                                                </tr>
+                                                <tr class="tr">
+                                                    <td><span class="s_s">审</span></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="tr">
+                                                    <td><span class="s_d">登</span></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="tr">
+                                                    <td><span class="s_ti">提</span></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="tr">
+                                                    <td><span class="s_z">暂</span></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                            <div class="page mt10">
+                                                <div class="pagination">
+                                                    <ul>
+                                                        <li class="first-child"><a href="#">首页</a></li>
+                                                        <li class="disabled"><span>上一页</span></li>
+                                                        <li class="active"><span>1</span></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">下一页</a></li>
+                                                        <li class="last-child"><a href="#">末页</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modal-table" class="modal fade" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header no-padding">
+                                        <div class="table-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                <span class="white">&times;</span>
+                                            </button>
+                                            Results for "Latest Registered Domains
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-body no-padding">
+                                        <table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+                                            <thead>
+                                            <tr>
+                                                <th>Domain</th>
+                                                <th>Price</th>
+                                                <th>Clicks</th>
+
+                                                <th>
+                                                    <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                                    Update
+                                                </th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">ace.com</a>
+                                                </td>
+                                                <td>$45</td>
+                                                <td>3,330</td>
+                                                <td>Feb 12</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">base.com</a>
+                                                </td>
+                                                <td>$35</td>
+                                                <td>2,595</td>
+                                                <td>Feb 18</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">max.com</a>
+                                                </td>
+                                                <td>$60</td>
+                                                <td>4,400</td>
+                                                <td>Mar 11</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">best.com</a>
+                                                </td>
+                                                <td>$75</td>
+                                                <td>6,500</td>
+                                                <td>Apr 03</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>
+                                                    <a href="#">pro.com</a>
+                                                </td>
+                                                <td>$55</td>
+                                                <td>4,250</td>
+                                                <td>Jan 21</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="modal-footer no-margin-top">
+                                        <button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
+                                            <i class="ace-icon fa fa-times"></i>
+                                            Close
+                                        </button>
+
+                                        <ul class="pagination pull-right no-margin">
+                                            <li class="prev disabled">
+                                                <a href="#">
+                                                    <i class="ace-icon fa fa-angle-double-left"></i>
+                                                </a>
+                                            </li>
+
+                                            <li class="active">
+                                                <a href="#">1</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">2</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="#">3</a>
+                                            </li>
+
+                                            <li class="next">
+                                                <a href="#">
+                                                    <i class="ace-icon fa fa-angle-double-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+
+    <%- include footer.html %>
+</div><!-- /.main-container -->
+
+
+
+<!-- page specific plugin scripts -->
+<!--
+<script src="assets/js/jquery.dataTables.min.js"></script>
+
+<script src="assets/js/jquery.dataTables.bootstrap.min.js"></script>
+<script src="assets/js/dataTables.tableTools.min.js"></script>
+<script src="assets/js/dataTables.colVis.min.js"></script>-->
+
+<!-- ace scripts -->
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    jQuery(function($) {
+
+        //table checkboxes
+        $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+        //select/deselect all rows according to table header checkbox
+        $('#dynamic-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $(this).closest('table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) tableTools_obj.fnSelect(row);
+                else tableTools_obj.fnDeselect(row);
+            });
+        });
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+            var row = $(this).closest('tr').get(0);
+            if(!this.checked) tableTools_obj.fnSelect(row);
+            else tableTools_obj.fnDeselect($(this).closest('tr').get(0));
+        });
+
+
+
+
+        $(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+            e.stopImmediatePropagation();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+
+
+        //And for the first simple table, which doesn't have TableTools or dataTables
+        //select/deselect all rows according to table header checkbox
+        var active_class = 'active';
+        $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+            var th_checked = this.checked;//checkbox inside "TH" table header
+
+            $(this).closest('table').find('tbody > tr').each(function(){
+                var row = this;
+                if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+                else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
+            });
+        });
+
+        //select/deselect a row when the checkbox is checked/unchecked
+        $('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+            var $row = $(this).closest('tr');
+            if(this.checked) $row.addClass(active_class);
+            else $row.removeClass(active_class);
+        });
+
+
+
+        /********************************/
+        //add tooltip for small view action buttons in dropdown menu
+        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+
+        //tooltip placement on right or left
+        function tooltip_placement(context, source) {
+            var $source = $(source);
+            var $parent = $source.closest('table')
+            var off1 = $parent.offset();
+            var w1 = $parent.width();
+
+            var off2 = $source.offset();
+            //var w2 = $source.width();
+
+            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            return 'left';
+        }
+        //
+        $(".tr:odd").css("background", "#FFFCEA");
+        $(".tr:odd").each(function(){
+            $(this).hover(function(){
+                $(this).css("background-color", "#f9f9f9");
+            }, function(){
+                $(this).css("background-color", "#FFFCEA");
+            });
+        });
+        $(".tr:even").each(function(){
+            $(this).hover(function(){
+                $(this).css("background-color", "#f9f9f9");
+            }, function(){
+                $(this).css("background-color", "#fff");
+            });
+        });
+        //
+        $(".nav-list>li").eq(1).addClass("active open").children("ul").children("li").eq(0).addClass("active");
+
+
+    })
+</script>
+
+</body>
+</html>
