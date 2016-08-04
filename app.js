@@ -10,7 +10,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 global.dbHandel = require('./database/dbHandel');
-global.db = mongoose.connect("mongodb://root:maifeng@ds019054.mlab.com:19054/mongo");
+global.db = mongoose.connect("mongodb://localhost/mongo");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
